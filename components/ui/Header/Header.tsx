@@ -1,15 +1,18 @@
 import { Circle, HStack, Text } from '@chakra-ui/react';
 
-export const MainHeader = () => (
+export const MainHeader = ({ ...rest }) => (
 	<HStack
+		as="header"
 		paddingX="1rem"
 		paddingY="1.125rem"
 		bgColor="white"
 		borderBottomRadius="2rem"
 		columnGap="0.5rem"
+		data-testid="header"
+		{...rest}
 	>
-		<Circle size="32px" bg="gray.700" />
-		<Text fontSize="lg" fontWeight="semibold">
+		<Circle size="32px" bg="gray.700" data-testid="logo" />
+		<Text fontSize="lg" fontWeight="semibold" data-testid="title">
 			Minerva
 		</Text>
 	</HStack>

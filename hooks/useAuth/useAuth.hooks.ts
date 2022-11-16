@@ -4,12 +4,16 @@ import { NextAuthCustomSession } from '../../pages/api/auth/[...nextauth].hooks'
 
 const useAuth = (provider: string) => {
 	const { data, status } = useSession();
-
+  
 	function handleSignin() {
 		signIn(provider);
 	}
 
-	return { session: data as NextAuthCustomSession, status, handleSignin };
+	return {
+		session: data as NextAuthCustomSession | null,
+		status,
+		handleSignin,
+	};
 };
 
 export default useAuth;

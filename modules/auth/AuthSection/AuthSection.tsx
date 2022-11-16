@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Button } from '../../../components/ui';
 import { useAuth } from '../../../hooks';
 
-const AuthSection = () => {
+const AuthSection = ({ ...rest }) => {
 	const { session, status, handleSignin } = useAuth('spotify');
 
 	return (
@@ -18,9 +18,10 @@ const AuthSection = () => {
 			borderRadius="3xl"
 			bgColor="white"
 			align="center"
+			{...rest}
 		>
 			<Stack>
-				<Text align="center" fontSize="xl" fontWeight="semibold">
+				<Text as="h2" align="center" fontSize="xl" fontWeight="semibold">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 				</Text>
 				<Text align="center" fontSize="sm" color="gray.700">
@@ -28,12 +29,12 @@ const AuthSection = () => {
 				</Text>
 			</Stack>
 			{session?.accessToken ? (
-				<Link href="/chat" passHref>
+				<Link href="/chat" passHref legacyBehavior>
 					<Button as="a">Start a chat</Button>
 				</Link>
 			) : status === 'loading' ? (
 				<Button width="full" disabled>
-					<Spinner />
+					<Spinner data-testid="spinner" />
 				</Button>
 			) : (
 				<Button onClick={handleSignin}>Start with Spotify Premium</Button>
