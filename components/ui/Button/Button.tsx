@@ -1,6 +1,9 @@
 import { Button as ChakraButton, ButtonProps } from '@chakra-ui/react';
 import { forwardRef, LegacyRef } from 'react';
 
+/**
+ * Main button component that extends the Chakra UI button component by changing some default props value.
+ */
 const Button = forwardRef(
 	(
 		{

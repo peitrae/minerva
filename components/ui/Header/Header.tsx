@@ -1,5 +1,8 @@
 import { Circle, HStack, Text } from '@chakra-ui/react';
 
+/**
+ * Main header component for landing page.
+ */
 export const MainHeader = ({ ...rest }) => (
 	<HStack
 		as="header"
