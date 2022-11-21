@@ -10,6 +10,9 @@ body,
   height: 100%;
 }
 
+#__next {
+  background-color: #F8F5FF
+}
 
 a {
   color: inherit;
