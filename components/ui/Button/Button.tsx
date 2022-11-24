@@ -8,7 +8,6 @@ const Button = forwardRef(
 	(
 		{
 			children,
-			size = 'lg',
 			borderRadius = 'full',
 			colorScheme = 'primary',
 			...rest
@@ -17,7 +16,6 @@ const Button = forwardRef(
 	) => (
 		<ChakraButton
 			ref={ref}
-			size={size}
 			borderRadius={borderRadius}
 			colorScheme={colorScheme}
 			{...rest}

@@ -30,14 +30,14 @@ const AuthSection = ({ ...rest }) => {
 			</Stack>
 			{session?.accessToken ? (
 				<Link href="/chat" passHref legacyBehavior>
-					<Button as="a">Start a chat</Button>
+					<Button as="a" size='lg'>Start a chat</Button>
 				</Link>
 			) : status === 'loading' ? (
-				<Button width="full" disabled>
+				<Button size='lg' width="full" disabled>
 					<Spinner data-testid="spinner" />
 				</Button>
 			) : (
-				<Button onClick={handleSignin}>Start with Spotify Premium</Button>
+				<Button size='lg' onClick={handleSignin}>Start with Spotify Premium</Button>
 			)}
 		</Stack>
 	);
